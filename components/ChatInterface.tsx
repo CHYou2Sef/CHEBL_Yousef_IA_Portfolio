@@ -32,7 +32,7 @@ const ChatInterface: React.FC = () => {
         ...prev,
         {
           role: 'model',
-          text: "⚠️ **System Alert: API Key Missing**\n\nTo enable this AI assistant, you need to configure an AI API Key.\n\n1. Create a `.env` file in the project root.\n2. Add: `VITE_API_KEY=your_actual_key` (or Gemini Key)\n3. Restart the application.\n\nPlease refer to the **README.md** for detailed setup instructions.",
+          text: "⚠️ **System Alert: API Key Missing**\n\nTo enable this AI assistant, you need to configure an AI API Key.\n\n1. Create a `.env.local` file in the project root.\n2. Add: `VITE_API_KEY=your_actual_key` (e.g. your Groq or Gemini key)\n3. Restart the application.\n\nPlease refer to the **README.md** for detailed setup instructions.",
           isError: true
         }
       ]);

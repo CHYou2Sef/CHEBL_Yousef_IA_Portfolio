@@ -62,11 +62,21 @@ class AIService {
             systemInstruction: SYSTEM_INSTRUCTION
         });
 
-        const chat = model.startChat({
-            history: history.map(m => ({
+        // Gemini requires history to start with a 'user' message
+        const geminiHistory = history
+            .map(m => ({
                 role: m.role === 'user' ? 'user' : 'model' as any,
                 parts: [{ text: m.text }]
-            })),
+            }));
+
+        // Filter out any leading model messages if the first actually useful message is not user
+        let startIndex = 0;
+        while (startIndex < geminiHistory.length && geminiHistory[startIndex].role !== 'user') {
+            startIndex++;
+        }
+
+        const chat = model.startChat({
+            history: geminiHistory.slice(startIndex),
             generationConfig: {
                 temperature: 0.7,
             },
