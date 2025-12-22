@@ -1,0 +1,156 @@
+\documentclass[a4paper,10pt]{article}
+
+% --- Packages ---
+\usepackage[left=0.4in, right=0.4in, top=0.4in, bottom=0.4in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fontawesome5} 
+\usepackage{xcolor}
+\usepackage{fontspec} 
+\setmainfont{Libertinus Serif}
+
+% --- Colors ---
+\definecolor{darkblue}{RGB}{0, 77, 153}
+\definecolor{black}{RGB}{0, 0, 0}
+
+% --- Link Setup ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% --- Custom formatting ---
+\titleformat{\section}{
+  \vspace{-6pt}\raggedright\large\bfseries\color{darkblue}
+}{}{0em}{}[\color{darkblue}\titlerule \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.99\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\begin{document}
+
+% --- Header ---
+\begin{center}
+    \textbf{\huge \scshape Youssef CHEBL} \\ \vspace{4pt}
+    \small 
+    \faMapMarker* Nabeul, Tunisia $|$ 
+    \faPhone* \ +216 27 363 604 $|$ 
+    \faEnvelope \ \href{mailto:youssef.chebl@enicar.ucar.tn}{youssef.chebl@enicar.ucar.tn} \\ \vspace{2pt}
+    \faLinkedin \ \href{https://linkedin.com/in/youssef-chebl-in}{linkedin.com/in/youssef-chebl-in} $|$
+    \faGithub \ \href{https://github.com/CHYou25ef}{github.com/CHYou25ef} $|$
+    \faGlobe \ \href{https://github.com/CHYou25ef}{Portfolio: github.com/CHYou25ef} 
+\end{center}
+
+% --- Education ---
+\section{Education}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \resumeSubheading
+      {National School of Engineers of Carthage (ENICarthage)}{Tunis, Tunisia}
+      {National Engineering Diploma in Computer Science}{Sept. 2023 -- Present}
+    
+    \resumeSubheading
+      {Higher Institute of Technological Studies of Nabeul (ISET)}{Nabeul, Tunisia}
+      {Bachelor's Degree in Information Technology}{Sept. 2021 -- July 2023}
+      \resumeItem{Graduated with Honors (Top 3 of class).}
+\end{itemize}
+
+
+
+% --- Experience ---
+\section{Professional Experience}
+\begin{itemize}[leftmargin=0.15in, label={}]
+
+    \resumeSubheading
+      {KWM Manufacturing}{Dar Chaabene El Fehri, Tunisia}
+      {AI \& Computer Vision Intern}{July 2024 -- September 2024}
+      \resumeItem{\textbf{Spearheaded} the development of a defect detection system (YOLOv8), attaining \textbf{90\% mAP} on critical defects.}
+      \resumeItem{\textbf{Eliminated} manual bottlenecks, saving approx. \textbf{15 hours/week} of inspection time and boosting factory throughput by \textbf{7\%}.}
+      \resumeItem{\textbf{Accelerated} inference speeds by 40\% via model quantization, enabling \textbf{25 FPS} real-time processing on Raspberry Pi 5.}
+      \resumeItem{\textbf{Overhauled} data workflows by engineering an automated ETL pipeline for 30,000+ industrial images.}
+\\
+    \resumeSubheading
+      {SOFIRUX}{Nabeul, Tunisia}
+      {Full Stack Web Developer Intern}{August 2024}
+      \resumeItem{\textbf{Transformed} client service operations by launching a portal serving 50+ users, reducing data retrieval time by 20\%.}
+      \resumeItem{\textbf{Strengthened} system security by designing 10+ RESTful API endpoints (Node.js/JWT) for complex transactions.}
+      \resumeItem{\textbf{Revitalized} code quality standards by introducing Jest unit testing, attaining 85\% coverage on critical modules.}
+      \resumeItem{\textbf{Mastered} Agile workflows within cross-functional teams, ensuring on-time delivery of features with zero critical bugs.}
+\\
+    \resumeSubheading
+      {DigiArt Living Lab}{Tunis, Tunisia}
+      {Mobile \& Plugin Developer Intern}{February 2023 -- June 2023}
+      \resumeItem{\textbf{Innovated} the design process by developing a custom Revit plugin (Python), adopted by 5 architects for data analysis.}
+      \resumeItem{\textbf{Conceived} and delivered a Flutter companion app that \textbf{attained} a 4.8/5.0 internal rating for usability.}
+      \resumeItem{\textbf{Resolved} calculation bottlenecks, reducing processing time from 10 minutes to under 5 seconds per room.}
+
+    \resumeSubheading
+      {LAB619}{Tunis, Tunisia}
+      {Java Developer Intern}{January 2022 -- February 2022}
+      \resumeItem{\textbf{Overcame} persistent deployment failures by engineering a robust JavaFX updater, achieving a 99\% success rate.}
+      \resumeItem{\textbf{Upgraded} the legacy codebase by refactoring 2,000+ lines into a clean MVC architecture.}
+      \resumeItem{\textbf{Founded} a standardized update protocol across 20+ POS terminals, reducing troubleshooting requests by 30\%.}
+\end{itemize}
+
+% --- Projects ---
+\section{Key Projects}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \resumeProjectHeading
+      {\textbf{IoT Environmental Monitoring System} $|$ \emph{C++, MQTT, Cloud}}{2023}
+      \resumeItem{Designed a system processing 1 data point/second with 99.9\% uptime and sub-second latency alerts.}
+      
+    \resumeProjectHeading
+      {\textbf{Train Ticket Reservation Platform} $|$ \emph{JavaFX, MySQL}}{2023}
+      \resumeItem{Architected a desktop app managing 10,000+ records, optimizing SQL queries to reduce retrieval time by 15\%.}
+
+    \resumeProjectHeading
+      {\textbf{Cross-Platform To-Do App} $|$ \emph{Android, Firebase}}{2023}
+      \resumeItem{Built a productivity app supporting 500+ concurrent tasks with Firebase sync under 100ms.}
+\end{itemize}
+
+
+% --- Skills ---
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Cloud \& DevOps}: AWS Cloud Foundations, Docker, Kubernetes, Terraform, CI/CD (GitHub Actions), Linux. \\
+     \textbf{Languages}: Python, Java, C/C++, JavaScript (ES6+), TypeScript, Dart, SQL. \\
+     \textbf{Web \& API}: React.js, Node.js, Express.js, REST API Design, HTML5, CSS3, Jest, Microservices. \\
+     \textbf{AI \& Data}: YOLOv8, PyTorch, Computer Vision, Pandas, NumPy, Edge Computing. \\
+     \textbf{Databases}: MongoDB, MySQL, PostgreSQL, Firebase.
+    }}
+\end{itemize}
+
+% --- Certifications & Activities ---
+\section{Certifications \& Activities}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Certifications} : AWS Cloud Foundations (2025), HiveMQ MQTT Associate, Python I \& II, Cisco PCAP. \\
+     \textbf{Languages} : English (Intermediate), French (B2), Arabic (Native). \\
+     \textbf{Awards} : 3rd Place (out of 15 teams) at Orange Digital Center Industry 4.0 Makeathon.
+    }}
+\end{itemize}
+
+\end{document}
