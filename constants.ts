@@ -91,44 +91,75 @@ export const EXPERIENCE: Experience[] = [
 export const PROJECTS: Project[] = [
   {
     id: "p1",
-    title: "Train Ticket Reservation Interface",
-    description: "JavaFX desktop application connected to a database.",
-    technologies: ["JavaFX", "Eclipse", "PhpMyAdmin"],
-    type: "Desktop",
-    githubUrl: "https://github.com/CHYou25ef/train-ticket-reservation" // Update this
+    title: "CityGuard - Smart City Ecosystem",
+    description: "A microservices enterprise ecosystem for Smart Cities. Features full interoperability between SOAP, REST, GraphQL, and gRPC, orchestrated via Spring Cloud Gateway.",
+    technologies: ["Java", "Spring Boot", "Spring Cloud", "PostgreSQL", "Docker", "gRPC", "GraphQL"],
+    type: "Backend / SOA",
+    githubUrl: "https://github.com/CHYou2Sef/CityGuard-",
+    demoUrl: ""
   },
   {
     id: "p2",
-    title: "IT shop Mobile App",
-    description: "Native Android application with cloud authentication and database.",
-    technologies: ["Android Studio", "Java", "Firebase"],
-    type: "Mobile",
-    githubUrl: "https://github.com/CHYou25ef/it-shop-mobile" // Update this
+    title: "SafeDrive Platform",
+    description: "Enterprise Service-Oriented Architecture (SOA) integrating four heterogeneous protocols with full DevOps pipeline (Jenkins, SonarQube, Prometheus).",
+    technologies: ["Java", "Spring Boot", "Jenkins", "SonarQube", "gRPC", "SOAP", "REST"],
+    type: "Enterprise / DevOps",
+    githubUrl: "https://github.com/CHYou2Sef/SafeDrive-Platform",
+    demoUrl: ""
   },
   {
     id: "p3",
-    title: "IoT Temperature Monitoring System",
-    description: "Real-time system with a cloud dashboard.",
-    technologies: ["DHT22", "ESP8266", "Things Speak", "Arduino IDE"],
-    type: "IoT",
-    githubUrl: "https://github.com/CHYou25ef/iot-temperature-monitor" // Update this
+    title: "PFEXHunter",
+    description: "A specialized platform designed to analyze CVs and internships, facilitating the search for PFE/PFA projects for engineering students.",
+    technologies: ["React", "FastAPI", "Python", "PostgreSQL", "Tailwind CSS"],
+    type: "Web Application",
+    githubUrl: "https://github.com/CHYou2Sef/PFEXHunter",
+    demoUrl: ""
   },
   {
     id: "p4",
-    title: "E-commerce Application (C)",
-    description: "Academic project for e-commerce management in C.",
-    technologies: ["Code::Blocks", "C Language"],
-    type: "Academic",
-    githubUrl: "https://github.com/CHYou25ef/ecommerce-c-app" // Update this
+    title: "AL-7AFLA - School Bus Tracking",
+    description: "Comprehensive mobile application for real-time school bus tracking and morning route management.",
+    technologies: ["React Native", "TypeScript", "Firebase", "Google Maps API"],
+    type: "Mobile",
+    githubUrl: "https://github.com/CHYou2Sef/AL-7AFLA",
+    demoUrl: ""
   },
   {
     id: "p5",
-    title: "Web Quiz Game",
-    description: "Interactive quiz interface.",
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    type: "Web",
-    githubUrl: "https://github.com/CHYou25ef/web-quiz-game", // Update this
+    title: "LocationVoiture - MERN Stack",
+    description: "Full-stack car rental management system (Sofirux project) featuring complete CRUD operations and user management.",
+    technologies: ["MongoDB", "Express.js", "React", "Node.js", "Redux"],
+    type: "Full Stack",
+    githubUrl: "https://github.com/CHYou2Sef/LocationVoiture",
     demoUrl: ""
+  },
+  {
+    id: "p6",
+    title: "Defender-107 Arcade Game",
+    description: "Retro-style interstellar arcade shooter inspired by the classic Defender, featuring dynamic waves and power-up systems.",
+    technologies: ["Python", "Pygame"],
+    type: "Game Dev",
+    githubUrl: "https://github.com/CHYou2Sef/Defender-107",
+    demoUrl: ""
+  },
+  {
+    id: "p7",
+    title: "SafeWay - Logistics Platform",
+    description: "Advanced logistics and route safety management platform focused on secure transport and data integrity.",
+    technologies: ["Java", "Spring Boot", "Spring Security", "MySQL"],
+    type: "Enterprise Web",
+    githubUrl: "https://github.com/CHYou2Sef/SafeWay-Project",
+    demoUrl: ""
+  },
+  {
+    id: "p8",
+    title: "Universal AI Portfolio",
+    description: "The current state-of-the-art portfolio featuring a universal AI provider adapter and modern UI/UX.",
+    technologies: ["React", "TypeScript", "Vite", "Gemini AI", "Groq AI"],
+    type: "Web / AI",
+    githubUrl: "https://github.com/CHYou2Sef/CHEBL_Yousef_IA_Portfolio",
+    demoUrl: "https://chebl-yousef-ia-portfolio.vercel.app/"
   }
 ];
 
