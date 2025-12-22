@@ -16,15 +16,16 @@ interface OpenAIResponse {
 
 class AIService {
     private config = {
-        provider: (import.meta.env.VITE_AI_PROVIDER || 'gemini') as 'gemini' | 'openai' | 'groq' | 'openrouter',
-        apiKey: import.meta.env.VITE_API_KEY || '',
-        model: import.meta.env.VITE_AI_MODEL || '',
-        baseUrl: import.meta.env.VITE_AI_BASE_URL || ''
+        provider: (import.meta.env.VITE_AI_PROVIDER?.toLowerCase().trim() || 'gemini') as 'gemini' | 'openai' | 'groq' | 'openrouter',
+        apiKey: import.meta.env.VITE_API_KEY?.trim() || '',
+        model: import.meta.env.VITE_AI_MODEL?.trim() || '',
+        baseUrl: import.meta.env.VITE_AI_BASE_URL?.trim() || ''
     };
 
     private geminiClient: GoogleGenerativeAI | null = null;
 
     constructor() {
+        console.log(`[AI Service] Initializing with provider: ${this.config.provider}, model: ${this.config.model || 'default'}`);
         if (this.config.provider === 'gemini' && this.config.apiKey) {
             this.geminiClient = new GoogleGenerativeAI(this.config.apiKey);
         }
