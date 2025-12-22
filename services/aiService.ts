@@ -33,22 +33,29 @@ class AIService {
 
     async sendMessage(history: ChatMessage[], message: string): Promise<string> {
         if (!this.config.apiKey) {
-            return "Error: API Key is missing in your configuration (.env file).";
+            return "Error: API Key is missing in your configuration.";
+        }
+
+        // Smart Detection: If VITE_AI_PROVIDER is missing or gemini, but the key starts with gsk_, force groq.
+        let activeProvider = this.config.provider;
+        if (this.config.apiKey.startsWith('gsk_') && activeProvider === 'gemini') {
+            console.log("[AI Service] Detected Groq key prefix, switching provider to groq.");
+            activeProvider = 'groq';
         }
 
         try {
-            switch (this.config.provider) {
+            switch (activeProvider) {
                 case 'gemini':
                     return await this.sendGemini(history, message);
                 case 'groq':
                 case 'openrouter':
                 case 'openai':
-                    return await this.sendOpenAICompatible(history, message);
+                    return await this.sendOpenAICompatible(history, message, activeProvider);
                 default:
                     return "Error: Unsupported AI provider configured.";
             }
         } catch (err: any) {
-            console.error(`AI Service Error (${this.config.provider}):`, err);
+            console.error(`AI Service Error (${activeProvider}):`, err);
             return `Error: ${err.message || 'An unexpected error occurred while communicating with the AI.'}`;
         }
     }
@@ -88,12 +95,13 @@ class AIService {
         return response.text();
     }
 
-    private async sendOpenAICompatible(history: ChatMessage[], message: string): Promise<string> {
+    private async sendOpenAICompatible(history: ChatMessage[], message: string, providerOverride?: string): Promise<string> {
+        const activeProvider = providerOverride || this.config.provider;
         let baseUrl = this.config.baseUrl;
         let model = this.config.model;
 
         // Default configuration for popular providers
-        if (this.config.provider === 'groq') {
+        if (activeProvider === 'groq') {
             baseUrl = baseUrl || 'https://api.groq.com/openai/v1';
             model = model || 'llama-3.3-70b-versatile';
         } else if (this.config.provider === 'openrouter') {
