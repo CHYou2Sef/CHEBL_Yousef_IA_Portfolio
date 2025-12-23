@@ -239,7 +239,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "Orange Digital Center",
     date: "Dec 02, 2022 - Dec 04, 2022",
     category: "Event",
-    image: "/certs/orange Certif.pdf",
+    image: "/certs/orange_Certif.pdf",
     logo: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg"
   },
   {
@@ -248,7 +248,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "Orange Digital Center & TT",
     date: "2022",
     category: "Event",
-    image: "/certs/orangeCertif+TTatt.pdf",
+    image: "/certs/orange_TT_certif.pdf",
     logo: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg"
   },
 

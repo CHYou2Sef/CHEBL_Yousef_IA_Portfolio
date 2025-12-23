@@ -48,12 +48,11 @@ const ChatInterface: React.FC = () => {
   }, [messages, isLoading]);
 
   const handleSend = async (textOverride?: string) => {
+    if (isLoading) return;
     const textToSend = textOverride || input;
     if (!textToSend.trim()) return;
 
-    if (!textOverride) {
-      setInput('');
-    }
+    setInput('');
 
     // Add user message
     const updatedMessages = [...messages, { role: 'user', text: textToSend } as ChatMessage];
@@ -229,8 +228,9 @@ const ChatInterface: React.FC = () => {
             {suggestions.map((sug, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={() => handleSend(sug)}
-                className="whitespace-nowrap px-3 py-1.5 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-700 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all"
+                className="whitespace-nowrap px-3 py-1.5 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-700 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all cursor-pointer"
               >
                 {sug}
               </button>
